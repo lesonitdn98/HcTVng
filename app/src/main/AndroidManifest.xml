@@ -13,15 +13,17 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <service android:name=".services.MyService" />
 
-        <activity
-            android:name=".activities.MainActivity"
-            android:windowSoftInputMode="adjustPan">
+        <activity android:name=".activities.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activities.MainActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".activities.AddActivity"
             android:windowSoftInputMode="adjustPan" />
