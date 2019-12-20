@@ -70,6 +70,7 @@ public class DetailActivity extends BaseActivity implements View.OnClickListener
                     MainActivity.CHECK_NOTI = false;
                     MainActivity.NOTI_ID = -1;
                     mService.stopNoti();
+                    stopService(new Intent(DetailActivity.this, MyService.class));
                 } else if (MainActivity.CHECK_NOTI) {
                     setIconNavRight2(R.drawable.ic_noti_run);
                     MainActivity.CHECK_NOTI = true;
