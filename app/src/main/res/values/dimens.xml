@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_height">48dp</dimen>
+    <dimen name="padding_nav_icon">16dp</dimen>
+    <dimen name="padding_nav_icon_right">14dp</dimen>
+    <dimen name="text_medium_16">16dp</dimen>
+    <dimen name="height_icon_small">28dp</dimen>
+    <dimen name="padding_profile_menu">15dp</dimen>
+    <dimen name="height_avatar_94">94dp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_small_13">13sp</dimen>
+    <dimen name="text_large_16">16sp</dimen>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_nav"
+    android:orientation="vertical"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:gravity="center_vertical"
+        tools:ignore="UselessParent"
+        >
+
+        <ImageView
+            android:id="@+id/imv_nav_left"
+            android:layout_width="@dimen/nav_height"
+            android:layout_height="@dimen/nav_height"
+            android:background="@drawable/bg_nav_btn"
+            android:padding="@dimen/padding_nav_icon"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/title"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_medium_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imv_nav_left"
+            app:layout_constraintEnd_toStartOf="@id/form_nav_right"
+            app:layout_constraintStart_toEndOf="@id/imv_nav_left"
+            app:layout_constraintTop_toTopOf="@id/imv_nav_left"
+            tools:ignore="ObsoleteLayoutParam,SpUsage"
+            />
+
+        <LinearLayout
+            android:id="@+id/form_nav_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/imv_nav_right2"
+                android:layout_width="@dimen/nav_height"
+                android:layout_height="@dimen/nav_height"
+                android:background="@drawable/bg_nav_btn"
+                android:padding="@dimen/padding_nav_icon_right"
+                android:visibility="gone"
+                tools:ignore="ContentDescription"
+                />
+
+            <ImageView
+                android:id="@+id/imv_nav_right"
+                android:layout_width="@dimen/nav_height"
+                android:layout_height="@dimen/nav_height"
+                android:background="@drawable/bg_nav_btn"
+                android:padding="@dimen/padding_nav_icon_right"
+                android:visibility="invisible"
+                tools:ignore="ContentDescription"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

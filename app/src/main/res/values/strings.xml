@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Học Từ Vựng</string>
+    <string name="th_m_danh_s_ch">Thêm Danh Sách</string>
+    <string name="danh_s_ch">Danh Sách</string>
+    <string name="ti_u">Tiêu đề:</string>
+    <string name="th_m_t_m_i">Thêm từ mới:</string>
+    <string name="th_m">Thêm</string>
+    <string name="t_m_i">Từ mới</string>
+    <string name="n_i_dung">Nội dung</string>
+    <string name="title">Title</string>
+    <string name="txt_waiting">Đang xử lý...</string>
+    <string name="ghi_chu">Ghi Chú</string>
+    <string name="tu_moi">Từ mới</string>
+    <string name="noi_dung">Nội dung</string>
+    <string name="them_tu_moi">Thêm Từ Mới</string>
+    <string name="txt_cancel">Huỷ</string>
+    <string name="txt_done_2">Thêm</string>
+    <string name="xin_chao">Xin Chao</string>
+    <string name="hello">Hello</string>
+    <string name="chinh_sua">Chỉnh sửa</string>
+    <string name="snooze">Next</string>
+</resources>

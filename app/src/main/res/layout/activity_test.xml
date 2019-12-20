@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/navigation_header_layout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/formPlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="5"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/formTextPlay"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:layout_weight="3"
+            font:cardCornerRadius="1dp"
+            font:layout_constraintStart_toStartOf="@id/formPlay"
+            font:layout_constraintTop_toTopOf="@id/formPlay"
+            >
+
+            <TextView
+                android:id="@+id/tvTestTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="20dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvForm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            font:layout_constraintStart_toStartOf="@id/formPlay"
+            font:layout_constraintTop_toBottomOf="@id/formTextPlay"
+            >
+
+            <LinearLayout
+                android:id="@+id/btnSuggest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_button_play"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_light"
+                    tools:ignore="ContentDescription"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="20dp"
+            font:layout_constraintTop_toBottomOf="@+id/cvForm"
+            >
+
+            <LinearLayout
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_button_play"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_next"
+                    tools:ignore="ContentDescription"
+                    />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

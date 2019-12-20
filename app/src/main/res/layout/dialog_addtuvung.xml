@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="40dp"
+    font:cardBackgroundColor="#F6F6F6"
+    font:cardCornerRadius="8dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/them_tu_moi"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_large_16"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="20dp"
+            android:visibility="visible"
+            font:cardCornerRadius="1dp"
+            >
+
+            <EditText
+                android:id="@+id/etTumoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:hint="@string/tu_moi"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                tools:ignore="Autofill,TextFields"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="20dp"
+            android:visibility="visible"
+            font:cardCornerRadius="1dp"
+            >
+
+            <EditText
+                android:id="@+id/etNoidung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:hint="@string/noi_dung"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textSize="14sp"
+                tools:ignore="Autofill,TextFields"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="20dp"
+            android:background="#e1e1e1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/bg_color_page"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/tab_done"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_dialog"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/tv_done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/txt_done_2"
+                    android:textColor="#009BCC"
+                    android:textSize="@dimen/text_large_16"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0.8dp"
+                android:layout_height="wrap_content"
+                android:background="#e1e1e1"
+                />
+
+            <LinearLayout
+                android:id="@+id/tab_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_button_dialog"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/txt_cancel"
+                    android:textColor="@color/color_status_red"
+                    android:textSize="@dimen/text_large_16"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
