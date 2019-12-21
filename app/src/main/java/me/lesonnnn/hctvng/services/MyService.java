@@ -16,6 +16,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import me.lesonnnn.hctvng.R;
+import me.lesonnnn.hctvng.activities.MainActivity;
 import me.lesonnnn.hctvng.database.DatabaseHandler;
 import me.lesonnnn.hctvng.models.TuVung;
 import me.lesonnnn.hctvng.receivers.MyBroadcastReceiver;
@@ -64,14 +65,16 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
-        mId = intent.getIntExtra("id", 0);
-        mTimer = new Timer();
-        mTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                ramdom(mId);
-            }
-        }, 0, 10000);
+        if (MainActivity.CHECK_NOTI) {
+            mId = intent.getIntExtra("id", 0);
+            mTimer = new Timer();
+            mTimer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    ramdom(mId);
+                }
+            }, 0, 10000);
+        }
         return START_STICKY;
     }
 
