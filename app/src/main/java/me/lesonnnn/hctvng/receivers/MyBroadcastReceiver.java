@@ -8,8 +8,13 @@ import me.lesonnnn.hctvng.services.MyService;
 public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        int id = intent.getIntExtra("id", -1);
         Intent i = new Intent(context, MyService.class);
-        i.putExtra("id", intent.getIntExtra("id", 0));
-        context.startService(i);
+        if (id != -1) {
+            i.putExtra("id", id);
+            context.startService(i);
+        } else {
+            context.stopService(i);
+        }
     }
 }

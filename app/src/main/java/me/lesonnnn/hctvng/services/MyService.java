@@ -14,7 +14,6 @@ import androidx.core.app.NotificationManagerCompat;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
-import java.util.TimerTask;
 import me.lesonnnn.hctvng.R;
 import me.lesonnnn.hctvng.activities.MainActivity;
 import me.lesonnnn.hctvng.database.DatabaseHandler;
@@ -65,22 +64,21 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(final Intent intent, int flags, int startId) {
-        if (MainActivity.CHECK_NOTI) {
-            mId = intent.getIntExtra("id", 0);
-            mTimer = new Timer();
-            mTimer.schedule(new TimerTask() {
-                @Override
-                public void run() {
+        mId = intent.getIntExtra("id", 0);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (MainActivity.CHECK_NOTI) {
                     ramdom(mId);
+                    try {
+                        Thread.sleep(20000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }, 0, 10000);
-        }
+            }
+        }).start();
         return START_STICKY;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     private void showNotification(String tuvung, String noidung) {
@@ -108,9 +106,11 @@ public class MyService extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
-        Intent broadcastIntent = new Intent(this, MyBroadcastReceiver.class);
-        broadcastIntent.putExtra("id", mId);
-        sendBroadcast(broadcastIntent);
+        if (MainActivity.CHECK_NOTI) {
+            Intent broadcastIntent = new Intent(this, MyBroadcastReceiver.class);
+            broadcastIntent.putExtra("id", mId);
+            sendBroadcast(broadcastIntent);
+        }
     }
 
     public void setId(int id) {
@@ -121,7 +121,5 @@ public class MyService extends Service {
         NotificationManagerCompat notificationManager =
                 NotificationManagerCompat.from(MyService.this);
         notificationManager.cancel(1111);
-        mTimer.cancel();
-        mTimer.purge();
     }
 }

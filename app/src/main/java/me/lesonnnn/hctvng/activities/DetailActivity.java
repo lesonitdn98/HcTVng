@@ -15,6 +15,7 @@ import me.lesonnnn.hctvng.R;
 import me.lesonnnn.hctvng.adapters.ListTuVungAdapter;
 import me.lesonnnn.hctvng.database.DatabaseHandler;
 import me.lesonnnn.hctvng.models.TuVung;
+import me.lesonnnn.hctvng.receivers.MyBroadcastReceiver;
 import me.lesonnnn.hctvng.services.MyService;
 import me.lesonnnn.hctvng.services.MyService.LocalBinder;
 
@@ -70,19 +71,23 @@ public class DetailActivity extends BaseActivity implements View.OnClickListener
                     MainActivity.CHECK_NOTI = false;
                     MainActivity.NOTI_ID = -1;
                     mService.stopNoti();
-                    stopService(new Intent(DetailActivity.this, MyService.class));
+                    Intent broadcastIntent = new Intent(DetailActivity.this, MyBroadcastReceiver.class);
+                    sendBroadcast(broadcastIntent);
                 } else if (MainActivity.CHECK_NOTI) {
                     setIconNavRight2(R.drawable.ic_noti_run);
                     MainActivity.CHECK_NOTI = true;
                     MainActivity.NOTI_ID = mCategoryId;
                     mService.setId(mCategoryId);
+                    Intent broadcastIntent = new Intent(DetailActivity.this, MyBroadcastReceiver.class);
+                    broadcastIntent.putExtra("id", mCategoryId);
+                    sendBroadcast(broadcastIntent);
                 } else {
                     setIconNavRight2(R.drawable.ic_noti_run);
                     MainActivity.CHECK_NOTI = true;
                     MainActivity.NOTI_ID = mCategoryId;
-                    Intent intent = new Intent(DetailActivity.this, MyService.class);
-                    intent.putExtra("id", mCategoryId);
-                    startService(intent);
+                    Intent broadcastIntent = new Intent(DetailActivity.this, MyBroadcastReceiver.class);
+                    broadcastIntent.putExtra("id", mCategoryId);
+                    sendBroadcast(broadcastIntent);
                 }
             }
         });
