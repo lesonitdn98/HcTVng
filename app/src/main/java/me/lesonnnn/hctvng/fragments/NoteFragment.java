@@ -43,7 +43,7 @@ public class NoteFragment extends BaseFragment implements MainActivity.OnClickBt
                 myEditText.setFocusable(true);
                 myEditText.requestFocus();
                 myEditText.setSelection(myEditText.getText().length());
-                if (myEditText.hasFocus()) {
+                if (!myEditText.hasFocus()) {
                     InputMethodManager imm =
                             (InputMethodManager) Objects.requireNonNull(getContext())
                                     .getSystemService(Context.INPUT_METHOD_SERVICE);
