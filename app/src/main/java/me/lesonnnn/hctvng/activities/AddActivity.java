@@ -49,7 +49,7 @@ public class AddActivity extends BaseActivity implements View.OnClickListener {
         showNavRight(R.drawable.ic_done, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!mEdtTitle.getText().toString().trim().equals("")) {
+                if (!mEdtTitle.getText().toString().trim().equals("") && mTuVungs.size() != 0) {
                     DatabaseHandler db = new DatabaseHandler(AddActivity.this);
                     int idListTv =
                             db.addCategory(new ListTv(mEdtTitle.getText().toString().trim()));
@@ -60,7 +60,7 @@ public class AddActivity extends BaseActivity implements View.OnClickListener {
                     setResult(MainActivity.RESULT_CODE);
                     onBackPressed();
                 } else {
-                    Toast.makeText(AddActivity.this, "Thiếu tiêu đề kìa!!!", Toast.LENGTH_SHORT)
+                    Toast.makeText(AddActivity.this, "Có vẻ hơi thiếu thiếu!!!", Toast.LENGTH_SHORT)
                             .show();
                 }
             }
